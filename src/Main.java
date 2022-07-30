@@ -13,17 +13,11 @@ public class Main {
     public static void main(String[] args) throws IOException {
         String host = "localhost";
         int port = 8080;
-        try{
-                clientSocket = new Socket(host,port);
-                out = new PrintWriter(clientSocket.getOutputStream(),true);
-                in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-            out.println("Shamil");
-            String resp = in.readLine();
-            System.out.println(resp);
-        }finally {
-            clientSocket.close();
-            in.close();
-            out.close();
-        }
+        clientSocket = new Socket(host,port);
+        out = new PrintWriter(clientSocket.getOutputStream(),true);
+        in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+        out.println("Shamil");
+        String resp = in.readLine();
+        System.out.println(resp);
     }
 }
